@@ -82,4 +82,14 @@ if (typeof Object.create !== 'function') {
 	};
 }
 var another_stooge = Object.create(stooge);
+// Prototype link has no effect on updating; only used in retrieval for finding default values
+another_stooge['firstname'] = 'Harry';
+another_stooge['middlename'] = 'Moses';
+another_stooge.nickname = 'Moe';
+// Prototypes are dynamic; if we add to a prototype, all objects based on that prototype obtain that value
+stooge.profession = 'actor';
+another_stooge.profession // 'actor'
 
+/*
+	Reflection
+*/
