@@ -93,3 +93,29 @@ another_stooge.profession // 'actor'
 /*
 	Reflection
 */
+typeof flight.number // 'number'
+typeof flight.status // 'string'
+typeof flight.arrival // 'object'
+typeof flight.manifest // 'undefined'
+
+// Prototype chains can produce values
+typeof flight.toString // 'function'
+typeof flight.constructor // 'function'
+
+// hasOwnProperty: returns true if the object has a particular property
+flight.hasOwnProperty('number')  // true
+flight.hasOwnProperty('contructor') // false
+
+/*
+	Enumeration
+*/
+// There is no guarantee of order
+var name;
+for (name in another_stooge) {
+	if (typeof another_stooge[name] !== 'function') {
+		document.writeln(name + ': ' + another_stooge[name]);
+	}
+}
+
+
+
